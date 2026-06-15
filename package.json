@@ -1,0 +1,24 @@
+{
+  "name": "qaa26-grupo3",
+  "version": "1.0.0",
+  "description": "Repositorio del Challenge Final de QA Automation - Cohorte I de 2026.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LauPerovich/QAA26-Grupo3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LauPerovich/QAA26-Grupo3/issues"
+  },
+  "homepage": "https://github.com/LauPerovich/QAA26-Grupo3#readme",
+  "devDependencies": {
+    "cypress": "^15.17.0"
+  }
+}
