@@ -1,0 +1,33 @@
+{
+  "registroValidoAdmin": {
+    "username": "admin",
+    "password": "password"
+  },
+  "registroAlternativoAdmin": {
+    "username": "user",
+    "password": "1234"
+  },
+  "habitacionesValidas": {
+    "habitacion1": {
+      "roomName": "106",
+      "type": "Single",
+      "accessible": "true",
+      "price": "150",
+      "details": ["wifi", "tv"]
+    },
+    "habitacion2": {
+      "roomName": "202",
+      "type": "Suite",
+      "accessible": "false",
+      "price": "350",
+      "details": ["wifi", "tv", "safe", "views"]
+    },
+    "habitacion3": {
+      "roomName": "303",
+      "type": "Family",
+      "accessible": "true",
+      "price": "280",
+      "details": ["wifi", "tv", "radio", "refresh"]
+    }
+  }
+}
