@@ -1,6 +1,3 @@
-Cypress.on('uncaught:exception', () => {
-  return false
-})
 
 describe('Booking - Reserva usuario invitado', () => {
 
