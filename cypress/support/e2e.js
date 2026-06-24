@@ -1,6 +1,7 @@
 import "./commands";
 import "./login";
 import "./agregarHabitacion";
+import "./completarFormulario";
 
 // Manejar excepciones no capturadas de la aplicación
 Cypress.on("uncaught:exception", (err, runnable) => {
