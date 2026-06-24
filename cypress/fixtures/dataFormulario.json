@@ -1,0 +1,30 @@
+{
+    "usuarioCorrecto":{
+    "name": "Juan Perez",
+    "email": "juan@test.com",
+    "phone": "35181015244",
+    "subject": "Consulta de reserva",
+    "message": "Tengo una duda sobre mi reserva."
+    },
+    "usuarioCaracteresIncorrecto":{
+    "name": "#%&#%&1234",
+    "email": "juan@test.com",
+    "phone": "celularTest",
+    "subject": "Consulta de reserva",
+    "message": "Tengo una duda sobre mi reserva."
+    },
+    "usuarioEmailInvalido":{
+    "name": "Juan Perez",
+    "email": "juanfail.com",
+    "phone": "35181015244",
+    "subject": "Consulta de reserva",
+    "message": "Tengo una duda sobre mi reserva."
+    },
+    "usCantidadCaracteresIncorrecto":{
+    "name": "Juan Perez",
+    "email": "juanfail.com",
+    "phone": "1185557019964199923872",
+    "subject": "TESTEO",
+    "message": "AvisoDePruebaFinalT"
+    }
+}
