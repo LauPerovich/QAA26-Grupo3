@@ -53,5 +53,9 @@ describe("AutomationInTesting - Rol Administrador", () => {
         dataAdmin.habitacionesValidas.habitacion1;
       cy.agregarHabitacion(roomName, type, accessible, price, details);
     });
+
+    it("Eliminar habitación", () => {
+      cy.eliminarHabitacion();
+    });
   });
 });

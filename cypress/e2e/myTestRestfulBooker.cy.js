@@ -21,7 +21,7 @@ describe('3.2-Validaciones del formulario de reserva', () => {
         cy.get('#doReservation').click()
         cy.get('.btn.btn-primary').contains('Reserve Now').click()
 
-        // Verificación de reserva no realizada 
+        // Valida error 400, que es un POST por formulario vacio  
         cy.request({
             method: 'POST',
             url: 'https://automationintesting.online/api/booking',
@@ -31,60 +31,64 @@ describe('3.2-Validaciones del formulario de reserva', () => {
             expect(response.status).to.eq(400)
         })
 
-        //Valida si alguno de los textos o msj de error son visibles o se muestran en pantalla
-        const expectedErrors = [
-            'size must be between 3 and 18',
-            'size must be between 3 and 30',
-            'must not be empty',
-            'Lastname should not be blank',
-            'size must be between 11 and 21',
-            'Firstname should not be blank',
-        ]
+    //Valida si alguno de los textos o msj de error son visibles o se muestran en pantalla
+    const expectedErrors = [
+      "size must be between 3 and 18",
+      "size must be between 3 and 30",
+      "must not be empty",
+      "Lastname should not be blank",
+      "size must be between 11 and 21",
+      "Firstname should not be blank",
+    ];
 
-        expectedErrors.forEach((errorMsg) => {
-            cy.get('li').contains(errorMsg).should('exist').should('be.visible')
-        })
-
-    })
-
-})
-
-
-
-
-
-
-// 3.3 Formulario de contacto
-// 1. Completar el formulario de contacto con datos válidos
-// 2. Enviar el mensaje y validar que se muestra la confirmación
-describe('Formulario de contacto', () => {
-    beforeEach(() => {
-        cy.visit('https://automationintesting.online/');
+    expectedErrors.forEach((errorMsg) => {
+      cy.get("li").contains(errorMsg).should("exist").should("be.visible");
     });
-    it('Envío de formulario con datos válidos', () => {
-        cy.intercept('POST', '**/message').as('submitContact');
-        cy.fixture('dataFormulario').then((data) => {
-            const usuario = data.usuarioCorrecto;
+  });
+});
 
-            cy.completarFormulario(
-                usuario.name,
-                usuario.email,
-                usuario.phone,
-                usuario.subject,
-                usuario.message
+describe("Formulario de contacto", () => {
+  beforeEach(() => {
+    cy.visit("https://automationintesting.online/");
+  });
+  it("Envío de formulario con datos válidos", () => {
+    cy.intercept("POST", "**/message").as("submitContact");
+    cy.fixture("dataFormulario").then((data) => {
+      const usuario = data.usuarioCorrecto;
 
-            );
-            cy.wait('@submitContact').then((interception) => {
-                expect(interception.response.statusCode).to.eq(200);
-                expect(interception.request.body).to.have.property('name', usuario.name);
-                expect(interception.request.body).to.have.property('email', usuario.email);
-                expect(interception.request.body).to.have.property('phone', usuario.phone);
-                expect(interception.request.body).to.have.property('subject', usuario.subject);
-                expect(interception.request.body).to.have.property('description', usuario.message);
-
-            });
-        cy.contains('Thanks for getting in touch Juan Perez!').should('be.visible');
-
-        });
+      cy.completarFormulario(
+        usuario.name,
+        usuario.email,
+        usuario.phone,
+        usuario.subject,
+        usuario.message,
+      );
+      cy.wait("@submitContact").then((interception) => {
+        expect(interception.response.statusCode).to.eq(200);
+        expect(interception.request.body).to.have.property(
+          "name",
+          usuario.name,
+        );
+        expect(interception.request.body).to.have.property(
+          "email",
+          usuario.email,
+        );
+        expect(interception.request.body).to.have.property(
+          "phone",
+          usuario.phone,
+        );
+        expect(interception.request.body).to.have.property(
+          "subject",
+          usuario.subject,
+        );
+        expect(interception.request.body).to.have.property(
+          "description",
+          usuario.message,
+        );
+      });
+      cy.contains("Thanks for getting in touch Juan Perez!").should(
+        "be.visible",
+      );
     });
+  });
 });
