@@ -21,7 +21,7 @@ describe('3.2-Validaciones del formulario de reserva', () => {
         cy.get('#doReservation').click()
         cy.get('.btn.btn-primary').contains('Reserve Now').click()
 
-        // Valida error 400, que es un POST por formulario vacio  
+        // Verificación de reserva no realizada 
         cy.request({
             method: 'POST',
             url: 'https://automationintesting.online/api/booking',

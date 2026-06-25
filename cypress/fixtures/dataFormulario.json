@@ -6,7 +6,7 @@
     "subject": "Consulta de reserva",
     "message": "Tengo una duda sobre mi reserva."
     },
-    "usuarioCaracteresIncorrecto":{
+    "usuarioCaracteresInvalidos":{
     "name": "#%&#%&1234",
     "email": "juan@test.com",
     "phone": "celularTest",
@@ -24,7 +24,7 @@
     "name": "Juan Perez",
     "email": "juanfail.com",
     "phone": "1185557019964199923872",
-    "subject": "TESTEO",
+    "subject": "TEST",
     "message": "AvisoDePruebaFinalT"
     }
 }
