@@ -25,7 +25,7 @@ describe('Reserva usuario invitado', () => {
 
     cy.contains('button', 'Reserve Now').last().click()
 
-    cy.contains('Booking Confirmed', { timeout: 30000 }).should('exist')
+    cy.contains('Booking Confirmed').should('exist')
 
     });
 });
